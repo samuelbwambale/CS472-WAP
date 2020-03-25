@@ -29,6 +29,7 @@ a:visited {
     text-align: center;
     font-size: 22pt;
     text-decoration: underline;
+    display: inline-block;
 }
 
 .heading {
@@ -38,6 +39,7 @@ a:visited {
     text-align: left;
     font-size: 18pt;
     text-decoration: underline;
+    display: inline-block;
 }
 .align-right {
     text-align: right;
