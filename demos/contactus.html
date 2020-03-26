@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Contact Form</h1>
+    <hr>
+    <form action="contactForm" method="GET" action="contact-form-handler">
+        <fieldset>
+            <legend></legend>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label for="customerName">*Name:</label>
+                    <input class="form-control" type="text" name="customerName" id="customerName"
+                        placeholder="Enter your name" autofocus><br>
+                    <small class="form-text text-muted">Enter your full name</small>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="">*Gender</label>
+                    <div class="form-group">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="radioGender" id="radioGenderFemale" value="Female"
+                                class="custom-control-input">
+                            <label for="radioGenderFemale" class="custom-control-label">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="radioGender" id="radioGenderMale" value="Male"
+                                class="custom-control-input">
+                            <label for="radioGenderMale" class="custom-control-label">Male</label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
