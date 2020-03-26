@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            border: 2px dashed black;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin: 10px;
+            float: left;
+        }
+
+        .break {
+            clear: left;
+        }
+
+        ul {
+            background-color: red;
+            padding: 20px;
+            text-align: center;
+        }
+
+        li {
+            display: inline;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: white;
+        }
+
+        #container {
+            background-color: lightgray;
+            overflow: hidden;
+            padding: 10px;
+            width: 500px;
+        }
+
+        #column1,
+        #column2 {
+            background-color: lightblue;
+            float: right;
+            margin-left: 10px;
+            width: 100px;
+        }
+
+        h1 {
+            background-color: yellow;
+        }
+
+        #a1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* margin: 10px; */
+        }
+
+        #b1 {
+            float: right;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* margin: 10px; */
+        }
+
+        #a2 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* margin: 10px; */
+        }
+
+        #b2 {
+            float: right;
+            clear: left;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* margin: 10px; */
+        }
+
+        #c2 {
+            text-align: right;
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #a4 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #b4 {
+            float: right;
+            clear: left;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #c4 {
+            text-align: right;
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #a7,
+        #b7 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: yellow;
+        }
+
+        #c7 {
+            margin-left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Exercise One -->
+    <div id="outer">
+        <div class="box"></div>
+        <div style="background-color: aqua;" class="box"></div>
+        <div style="background-color: blue;" class="box "></div>
+        <div style="background-color: red;" class="box break"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <!-- Exercise Two -->
+    <ul class="listItemsDiv">
+        <li class="listItem">Bananas</li>
+        <li class="listItem">Apples</li>
+        <li class="listItem">Grapefruit</li>
+        <li class="listItem">Oranges</li>
+        <li class="listItem">Papaya</li>
+    </ul>
+
+    <!-- Exercise Three -->
+
+    <div id="container">
+        <h1>Header</h1>
+
+        <div id="column1">
+            <h2>Area 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua...</p>
+        </div>
+
+        <div id="column2">
+            <h2>Area 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur ..</p>
+        </div>
+
+        <h2>Area 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur</p>
+    </div>
+    <br>
+
+    <!-- Exercise Four -->
+    <div id="a1">A</div>
+    <div id="b1">B</div>
+    <div id="c1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+        labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur.
+    </div>
+    <br />
+
+    <div id="a2">A</div>
+    <div id="b2">B</div>
+    <div id="c2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+        labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur.
+    </div>
+    <br>
+
+    <div id="a4">A</div>
+    <div id="b4">B</div>
+    <div id="c4">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+        labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur.
+    </div>
+    <br>
+
+    <div id="a7">A</div>
+    <div id="b7">B</div>
+    <div id="c7">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+        labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur.
+    </div>
+    <br />
+
+
+</body>
+
+</html>
