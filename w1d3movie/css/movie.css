@@ -152,7 +152,6 @@ ul li{
 }
 
 .validators {
-    clear: both; 
     float: right;
     position: fixed;
     bottom: 0;
