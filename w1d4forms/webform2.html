@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/webform2.js"></script>
+
     <title>Web Form 2</title>
 </head>
 
@@ -35,7 +37,7 @@
                     <li><a href="#">Hello!</a></li>
                     <button type="button" class="btn btn-default navbar-btn">Sign Out</button>
                 </ul>
-        </div><!-- /.navbar-collapse -->
+            </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
@@ -44,21 +46,24 @@
     <div class="container">
 
         <h3>New Product Form</h3>
-        <form action=""></form>
+        <form action="" id="productForm"></form>
         <div class="row">
             <div class="col-md-6 form-group">
                 <label for="productNumber">Product Number</label>
-                <input type="text" class="form-control" id="productNumber" name="productNumber" placeholder="Product number" required>
+                <input type="text" class="form-control" id="productNumber" name="productNumber"
+                    placeholder="Product number" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="quantityInStock">Quantity in stock</label>
-                <input type="number" class="form-control" id="quantityInStock" name="quantityInStock" placeholder="0" required>
+                <input type="number" class="form-control" id="quantityInStock" name="quantityInStock" placeholder="0"
+                    required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 form-group">
                 <label for="productName">Name</label>
-                <input type="text" class="form-control" id="productName" name="productName" placeholder="Product name" required>
+                <input type="text" class="form-control" id="productName" name="productName" placeholder="Product name"
+                    required>
             </div>
             <div class="form-group col-md-6">
                 <label for="supplier">Supplier</label>
@@ -74,8 +79,7 @@
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="price">Unit Price</label>
-                <input type="number" class="form-control" id="price"
-                    placeholder="0.0">
+                <input type="number" class="form-control" id="price" placeholder="0.0">
             </div>
             <div class="form-group col-md-6">
                 <label for="pdtName">Date Supplied</label>
@@ -86,17 +90,18 @@
         <div class="row">
             <div class="col-md-6"></div>
             <div class="col-md-6">
-                
+
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="reset" id="reset" name="button" class='btn btn-warning'>Reset</button>
+                        <button type="reset" id="reset" name="button" class='btn btn-warning' onclick="reset();">Reset</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" id="cancel" name="button" class="btn btn-danger">Cancel</button>
                         <!-- <button type="button" class="btn btn-outline-warning">Warning</button> -->
                     </div>
-                    <div class="col-md-4">
-                        <button type="submit" id="addPdt" name="button" class='btn' style="background-color: #e3f2fd;">Add Product</button>
+                    <div class="col-md-2">
+                        <button type="submit" id="addPdt" name="button" class='btn'
+                            style="background-color: #e3f2fd;" onclick="printDetails(event);">Add Product</button>
                     </div>
                 </div>
 
@@ -106,9 +111,15 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

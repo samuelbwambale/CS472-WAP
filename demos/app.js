@@ -58,3 +58,5 @@ for(let i = 0; i < numbers.length; i++) {
 // Functional programming iteration
 numbers.forEach(x => console.log(x));
 numbers.map(number => number * 2).forEach(num => console.log(num))
+
+
