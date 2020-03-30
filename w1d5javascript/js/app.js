@@ -181,7 +181,7 @@ function printFibo(n, a, b) {
     }
     else {
         for (let i = 2; i < n; i++) {
-            output.push((output[i-1] + output[i-2]));
+            output.push((output[i - 1] + output[i - 2]));
         }
         console.log(output)
     }
