@@ -1,12 +1,11 @@
 function increaseFontSize() {
     const txtArea = document.getElementById("textArea");
-    let fontSIze = parseInt(document.getElementById("textArea").fontSize);
-    console.log(fontSIze)
-    const sample = fontSIze + 10 + "px";
-    txtArea.style.fontSIze = sample;
-    console.log(txtArea.style.fontSIze = fontSIze + 10 + "px");
+    let fontSize = parseInt(window.getComputedStyle(document.getElementById("textArea")).fontSize);
+    txtArea.style.fontSize = fontSize + 2 + "px";;
+}
 
-    // var computedFontSize = window.getComputedStyle(document.getElementById("foo")).fontSize;
+function increaseFontSizeWithTimer() {
+    setInterval(increaseFontSize, 500);
 }
 
 function displayAlert() {
@@ -14,7 +13,6 @@ function displayAlert() {
 }
 
 function boldenText() {
-    // console.log(pigLatin('axe'));
     const checkBox = document.getElementById("check1");
     const txtArea = document.getElementById("textArea");
     const body = document.getElementById("body");
@@ -23,7 +21,6 @@ function boldenText() {
         txtArea.style.color = "green";
         txtArea.style.textDecoration = "underline";
         body.style.background = "url('http://www.cs.washington.edu/education/courses/190m/CurrentQtr/labs/6/hundred-dollar-bill.jpg')";
-        // body.style.backgroundColor = "red" 
 
     } else {
         txtArea.style.fontWeight = "normal";
@@ -36,14 +33,12 @@ function boldenText() {
 function transformPigLatin() {
     const words = document.getElementById("textArea").value;
     const arr = words.split(' ');
-    console.log(arr);
     for (let i=0;i<arr.length;i++) {
         var word = arr[i];
         if (word.length > 0 && isNaN(word)) {
             arr[i] = checkForConsonant(word);
         }
     }
-    console.log("array " + arr);
     document.getElementById("textArea").value = arr.join(' ');
 
 }
@@ -62,19 +57,14 @@ function checkForConsonant(word) {
     return word;
 }
 
-console.log()
-
-    // function timedEnlarging(){
-    //     //let timer = null;
-    //     setInterval(enlargeText,500);
-    //   }
-    //   function enlargeText(){
-    //     let txtSize = parseInt(document.getElementById('txtarea').style.fontSize);
-    //     console.log('before : '+txtSize);
-    //     txtSize += 2;
-    //     document.getElementById('txtarea').style.fontSize = txtSize +'px';
-    //     console.log('final : '+txtSize);
-
-    //   }
-
-
+function transforMalkovitch() {
+    const words = document.getElementById("textArea").value;
+    const arr = words.split(' ');
+    for (let i=0;i<arr.length;i++) {
+        var word = arr[i];
+        if (word.length >= 5 && isNaN(word)) {
+            arr[i] = "Malkovitch";
+        }
+    }
+    document.getElementById("textArea").value = arr.join(' ');
+}
