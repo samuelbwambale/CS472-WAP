@@ -33,7 +33,7 @@ function boldenText() {
     }
 }
 
-function pigLatin() {
+function transformPigLatin() {
     const words = document.getElementById("textArea").value;
     const arr = words.split(' ');
     console.log(arr);

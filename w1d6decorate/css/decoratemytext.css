@@ -26,3 +26,10 @@ textarea {
 	font-family: monospace;
 	font-size: 12pt;
 }
+
+footer {
+    float: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

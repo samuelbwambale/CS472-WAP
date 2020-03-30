@@ -9,3 +9,10 @@ label {
 .float-right {
     float: right;
 }
+
+footer {
+    float: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}

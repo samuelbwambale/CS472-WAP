@@ -13,7 +13,16 @@
   }
   
   /* On mouse-over, add a deeper shadow */
-  .card:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
+
+footer {
+    float: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
   

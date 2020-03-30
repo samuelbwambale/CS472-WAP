@@ -46,7 +46,7 @@
     <div class="container">
 
         <h3>New Product Form</h3>
-        <form action="" id="productForm"></form>
+        <form id="productForm">
         <div class="row">
             <div class="col-md-6 form-group">
                 <label for="productNumber">Product Number</label>
@@ -82,9 +82,9 @@
                 <input type="number" class="form-control" id="price" placeholder="0.0">
             </div>
             <div class="form-group col-md-6">
-                <label for="pdtName">Date Supplied</label>
+                <label for="date">Date Supplied</label>
                 <input type="date" class="form-control" id="date" placeholder="yyyy-mm-dd">
-                <small id="date" class="form-text text-muted">Enter a Valid Date</small>
+                <small id="small-text" class="form-text text-muted">Enter a Valid Date</small>
             </div>
         </div>
         <div class="row">
@@ -93,15 +93,16 @@
 
                 <div class="row">
                     <div class="col-md-2">
-                        <button type="reset" id="reset" name="button" class='btn btn-warning' onclick="reset();">Reset</button>
+                        <button type="reset" id="reset" name="button" class='btn btn-warning'
+                            onclick="reset();">Reset</button>
                     </div>
                     <div class="col-md-2">
                         <button type="button" id="cancel" name="button" class="btn btn-danger">Cancel</button>
                         <!-- <button type="button" class="btn btn-outline-warning">Warning</button> -->
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" id="addPdt" name="button" class='btn'
-                            style="background-color: #e3f2fd;" onclick="printDetails(event);">Add Product</button>
+                        <button type="submit" id="addPdt" name="button" class='btn' style="background-color: #e3f2fd;"
+                            onclick="printDetails(event);">Add Product</button>
                     </div>
                 </div>
 
@@ -110,6 +111,16 @@
         </form>
 
     </div>
+    <footer>
+        <a href="http://validator.w3.org/check?uri=https://samuelbwambale.github.io/CS472-WAP/w1d4forms/webform2.html">
+            <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html-validator" />
+        </a>
+
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="css-validate" />
+        </a>
+        <div>Copyright &copy; 2020 - sbwambale</div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
