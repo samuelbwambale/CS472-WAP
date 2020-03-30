@@ -31,7 +31,9 @@ footer {
     float: right;
     position: fixed;
     bottom: 0;
-    right: 0;
+	right: 0;
+	font-family: monospace;
+
 }
 
 button {

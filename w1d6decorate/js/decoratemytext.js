@@ -1,7 +1,7 @@
 function increaseFontSize() {
     const txtArea = document.getElementById("textArea");
     let fontSize = parseInt(window.getComputedStyle(document.getElementById("textArea")).fontSize);
-    txtArea.style.fontSize = fontSize + 2 + "px";;
+    txtArea.style.fontSize = fontSize + 2 + "px";
 }
 
 function increaseFontSizeWithTimer() {
