@@ -1,0 +1,86 @@
+var x = 10;
+function main() {
+	console.log("x1 is " + x);
+	x = 20;
+	console.log("x2 is " + x);
+	if(x > 0) {
+		var x = 30;
+		console.log("x3 is " + x);
+	}
+	console.log("x4 is " + x);
+	var x = 40;
+	var f = function(x) {
+		console.log("x5 is " + x);
+	};
+	f(50);
+	console.log("x6 is " + x);
+}
+main();
+console.log("x7 is " + x);
+
+Here is how you execute/evaluate the correct output/result (Remember to do 2 phase execution - hoisting before exec):
+
+First, in the Global Lexical Environment:
+
+	Phase 1 - hoisting a.k.a creation of the lexical env:
+
+		var x = undefined
+		var main = [function(){}]
+
+	Phase 2 - Execution/Evaluation of statements and expressions
+		
+		x = 10
+		calls main();
+	
+		Next, in the main() function's Lexical Environment:	
+		
+			Phase 1 - hoisting a.k.a creation of the lexical env:
+			
+				var x = undefined
+				var f = undefined
+			
+			Phase 2 - Execution/Evaluation of statements and expressions
+			
+				console.log("x1 is " + x); // "x1 is undefined"
+				x = 20;
+				console.log("x2 is " + x); // "x2 is 20"
+				if(x > 0) { // true
+					x = 30; // assigns that same x the new value, 30
+					console.log("x3 is " + x); // "x3 is 30"
+				}
+				console.log("x4 is " + x); // "x4 is 30"
+				x = 40; // assigns that same x the new value, 40 
+				f = function(x) { // assigns the function to f
+					console.log("x5 is " + x);
+				};
+				f(50); // calls f passing in as argument, the value 50
+				
+				Next, in the f() function's Lexical Environment:
+				
+					Phase 1 - hoisting a.k.a creation of the lexical env:
+						// No variable or function declaration found; so nothing to hoist here
+					
+					Phase 2 - Execution/Evaluation of statements and expressions
+						x = 50; // as a result of the function's x parameter being assigned the value 50 at function call
+						console.log("x5 is " + x); // "x5 is 50"
+						// Finishes and Exits f() function
+				
+				// Back into main function
+				console.log("x6 is " + x); // "x6 is 40" -- Note: That was the last value we assigned to x at line 52 above
+				
+				// Finishes and Exits main() function		
+		
+		// Back to Execution/Evaluation of statements and expressions in the Global Lexical Environment		
+		console.log("x7 is " + x); // "x7 is 10" // -- See line 32 above showing the last value assigned to x in global		
+		
+======================================================================
+
+Therefore, the final output of the JavaScript code fragment will be:
+
+"x1 is undefined"
+"x2 is 20"
+"x3 is 30"
+"x4 is 30"
+"x5 is 50"
+"x6 is 40"	
+"x7 is 10"		

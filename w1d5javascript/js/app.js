@@ -3,8 +3,10 @@
 /* 1.	Define a function max() that takes two numbers as arguments and 
 returns the largest of them.Use the if-then -else construct available in Javascript. */
 function max(a, b) {
-    if (a > b) return a;
-    else return b;
+    // if (a > b) return a;
+    // else return b;
+
+    return a > b ? a : b;
 }
 console.log("max(2, 4) returns " + max(2, 4));
 
@@ -12,9 +14,14 @@ console.log("max(2, 4) returns " + max(2, 4));
 three numbers as arguments and returns the largest of them.
  */
 function maxOfThree(a, b, c) {
-    const d = max(a, b);
-    if (c > d) return c;
-    else return d;
+    let max = a;
+    if (b > max) {
+        max = b;
+    }
+    if (c > max) {
+        max = c;
+    }
+    return max;
 }
 console.log("maxOfThree(2, 4, 6) returns " + maxOfThree(2, 4, 6));
 
@@ -22,9 +29,22 @@ console.log("maxOfThree(2, 4, 6) returns " + maxOfThree(2, 4, 6));
 (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
  */
 function isVowel(c) {
-    return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;
+    c = c.toLowerCase();
+    let vowel = false;
+    switch (c) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            vowel = true;
+            break;
+    }
+    return vowel;
+
+    // return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;
 }
-console.log("isVowel('x') returns " + isVowel('x'));
+console.log("isVowel('e') returns " + isVowel('e'));
 
 /* 4.	Define a function sum() and a function multiply() that sums and multiplies (respectively) 
 all the numbers in an input array of numbers. For example, sum([1,2,3,4]) should return 10, and 
@@ -33,17 +53,25 @@ multiply([1,2,3,4]) should return 24. Note/Hint: Do these using Imperative progr
  */
 function sum(array) {
     let total = 0;
-    for (let index = 0; index < array.length; index++) {
-        total += array[index];
 
+    let i = 0;
+    while (i < array.length) {
+        total += array[i];
+        i++;
     }
+
+    // for (let index = 0; index < array.length; index++) {
+    //     total += array[index];
+
+    // }
+
     return total;
 }
 
 function multiply(array) {
     let product = 1;
     for (let index = 0; index < array.length; index++) {
-        product = product * array[index];
+        product *= array[index];
 
     }
     return product;
@@ -78,9 +106,11 @@ should return the string "ratset gaj". */
 
 function reverse(str) {
     // return str.split("").reverse().join("");
-    const splitString = str.split("");
-    const reverseArray = splitString.reverse();
-    return reverseArray.join("");
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
 }
 const text = "jag testar";
 console.log("reverse('jag testar') returns " + reverse(text));
@@ -148,6 +178,9 @@ an array of numbers and finds and returns the second biggest of the numbers. For
 findSecondBiggest([1,2,3,4,5]) should return 4. 
 And findSecondBiggest([19,9,11,0,12]) should return 12. (Note: Do not use sorting!) */
 function findSecondBiggest(arr) {
+    if (arr.length < 2) {
+        throw new Error('Size is invalid');
+    }
     // return arr.sort((a,b) => b - a)[1]; // using sort()
     let first = arr[0];
     let second = arr[0];
@@ -170,9 +203,10 @@ printFibo(n=6, a=0, b=1), prints-out: "0, 1, 1, 2, 3, 5", as output;
 and printFibo(n=10, a=0, b=1), prints-out: "0, 1, 1, 2, 3, 5, 8, 13, 21, 34", as output).
  */
 function printFibo(n, a, b) {
+    if (n == 0) return;
     const output = [];
-    output.push(a);
-    output.push(b)
+    output[0] = a;
+    output[1] = b;
     if (n === 1) {
         console.log(output[0]);
     }
@@ -181,11 +215,12 @@ function printFibo(n, a, b) {
     }
     else {
         for (let i = 2; i < n; i++) {
-            output.push((output[i - 1] + output[i - 2]));
+            output[i] = output[i - 1] + output[i - 2];
         }
         console.log(output)
     }
 }
+
 console.log("printFibo(1, 0, 1) "); printFibo(1, 0, 1);
 console.log("printFibo(2, 0, 1) "); printFibo(2, 0, 1);
 console.log("printFibo(3, 0, 1) "); printFibo(3, 0, 1);
