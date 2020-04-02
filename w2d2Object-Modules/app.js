@@ -3,10 +3,10 @@
 const countObject = {
     counter: 0,
     add: function () {
-        counter += 1;
+        this.counter += 1;
     },
     reset: function () {
-        counter = 0;
+        this.counter = 0;
     }
 
 };
@@ -118,4 +118,5 @@ Employee.setAddress = function (newAddress) {
 };
 
 Employee.setAddress("Fairfield");
+console.log(" Address: " + Employee.address);
 console.log(" Address: " + Employee.getAddress());
