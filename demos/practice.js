@@ -86,16 +86,39 @@ x = 5;
 console.log(myFunction());
  */
 
-/* bar();
-var foo = 1;
+// bar();
+// console.log(foo);
+/* let foo = 11;
+console.log(foo);
 var bar = function() {
     // var foo;
     if (!foo) {
-        var foo = 10;
+        var foo = 10; // var not limited to block but function block
     }
     alert(foo);
 }
-// bar(); */
+bar(); */
+
+/* QN: Do let and const variables get hoisted?
+AN: Yes, but they do not get initialized with the value of undefined
+Instead let and const variables are marked as uninitialized
+ */
+
+y; // undeclaired variable not hoisted
+var y; // declared variable so it is hoisted
+ /* QN: Do global variables get hoisted? e.g x =1;
+AN: Yes, but they do not get initialized with the value of undefined
+Instead let and const variables are marked as uninitialized
+ */
+
+
+/* 
+// Hositing
+foo = undefined
+bar = function(){}
+
+//Execution
+ */
 
 /* 
 function sam() {
@@ -151,39 +174,28 @@ console.log(funcs[2]());
 console.log(funcs[3]());
 console.log(funcs[4]());
 
-/* Using normal function approach */
-const counter = function () {
-    let counter = 0;
-    function add() {
-        counter += 1;
-    }
-    function reset() {
-        counter = 0;
-    }
-    return {
-        add: function () {
-            add();
-        },
-        reset: function () {
-            reset();
-        },
-        count: function () {
-            return counter;
-        }
 
+/* QUESTION 6 */
+const countObject = {
+    counter: 0,
+    add: function () {
+        this.counter += 1;
+    },
+    reset: function () {
+        this.counter = 0;
     }
+
 };
-console.log('Using normal function approach');
-const myCount = counter();
-myCount.add();
-console.log("count " + myCount.count());
-myCount.reset();
-console.log("count " + myCount.count());
+console.log('Using object approach');
+countObject.add();
+console.log("count " + countObject.counter);
+countObject.reset();
+console.log("count " + countObject.counter);
 
 
 
-/* Using module approach */
-const counter2 = (function () {
+/* Using revealing module approach */
+const countModule = (function () {
     let counter = 0;
     function add() {
         counter += 1;
@@ -192,27 +204,79 @@ const counter2 = (function () {
         counter = 0;
     }
     return {
-        add: function () {
-            add();
-        },
-        reset: function () {
-            reset();
-        },
-        count: function () {
+        add: add,
+        reset: reset,
+        counter: function () {
             return counter;
         }
 
     }
 })();
 
-console.log('Using module approach');
-counter2.add()
-console.log("count " + counter2.count());
-counter2.reset()
-console.log("count " + counter2.count());
+console.log('Using revealing module approach');
+countModule.add()
+console.log("count " + countModule.counter());
+countModule.reset()
+console.log("count " + countModule.counter());
+
+/* Using revealing module approach to increment by inc */
+const countModule2 = (function () {
+    let counter = 0;
+    function add(inc) {
+        counter += inc;
+    }
+    function reset() {
+        counter = 0;
+    }
+    return {
+        add: function () {
+            add();
+        },
+        reset: function () {
+            reset();
+        },
+        counter: function () {
+            return counter;
+        }
+
+    }
+}());
+
+console.log('Using revealing module approach to increment by inc');
+countModule2.add(10)
+console.log("count " + countModule2.counter());
+countModule2.reset()
+console.log("count " + countModule2.counter());
+
+/* Using module factory approach */
+const count = function () {
+    let counter = 0;
+    function add() {
+        counter += 1;
+    }
+    function reset() {
+        counter = 0;
+    }
+    return {
+        add: add,
+        reset: reset,
+        counter: function () {
+            return counter;
+        }
+
+    }
+};
+console.log('Using module factory approach');
+const myCount = count();
+myCount.add();
+console.log("count " + myCount.counter());
+myCount.reset();
+console.log("count " + myCount.counter());
 
 
 /* Make adder */
+
+// We could store this function in a separate variable and use it to create several make_adders. 
 const make_adder = function (val) {
     let counter = 0;
     function add() {
@@ -222,15 +286,14 @@ const make_adder = function (val) {
         counter = 0;
     }
     return {
-        add: function() {
-            add()
-        },
-        counter: function() {
+        add: add,
+        counter: function () {
             return counter;
         }
     }
 };
 
+console.log('Make adder');
 const add5 = make_adder(5);
 add5.add(); add5.add(); add5.add();
 console.log(add5.counter());
@@ -239,7 +302,90 @@ const add7 = make_adder(7);
 add7.add(); add7.add(); add7.add();
 console.log(add7.counter());
 
+
+str = "asdf";
+foo = 1;
+var bar = function () {
+    alert(foo); 
+    alert(str);
+};
+bar();
+
+/* 1, in global str=undefined, foo=undefined; bar = undediened.
+2, execution in global, str="asdf", foo=1; call bar()
+3, in bar env, alert(foo) displays 1, alert(str) diplays asdf;
+
+ */
+
+
 /* QUESTION 9
 Use the module pattern
 
 */
+
+/* QUESTION 10
+*/
+
+const Employee = (function () {
+    let name = "";
+    let age = 0;
+    let salary = 0;
+    const getName = function () {
+        return name;
+    };
+    const getAge = function () {
+        return age;
+    };
+    const getSalary = function () {
+        return salary;
+    };
+
+    const setName = function (newName) {
+        name = newName;
+    };
+    const setAge = function (newAge) {
+        age = newAge;
+    };
+    const setSalary = function (newSalary) {
+        salary = newSalary;
+    };
+    const increaseSalary = function (percentage) {
+        newSalary = getSalary + (getSalary * percentage / 100);
+        setSalary(newSalary);
+    };
+    const incrementAge = function () {
+        setAge(getAge + 1);
+    }
+
+    return {
+        fetchName: getName,
+        getAge: getAge,
+
+        setName: setName,
+        setAge: setAge,
+        setSalary: setSalary,
+        increaseSalary: increaseSalary,
+        incrementAge: incrementAge
+    }
+})();
+
+console.log('Employee object');
+Employee.setName('Samuel');
+Employee.setAge(30);
+Employee.setSalary(100000)
+console.log("Name: " + Employee.fetchName() + " Age: " + Employee.getAge());
+Employee
+
+/* Question 11 */
+Employee.address = "";
+// another method! (Q: public or private? public)
+Employee.getAddress = function () {
+  return Employee.address;
+};
+Employee.setAddress = function (newAddress) {
+  Employee.address = newAddress;
+};
+
+Employee.setAddress("Fairfield");
+console.log("Name: " + Employee.fetchName() + " Age: " + Employee.getAge() + " Address: " + Employee.getAddress());
+

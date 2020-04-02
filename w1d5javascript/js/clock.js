@@ -2,10 +2,12 @@
 
 function displayClock() {
     let d = new Date();
-    let d1 = d.getMonth() + 1 + "-" + d.getDate() + "-" + d.getFullYear();
-    d1 = d1 + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-    document.getElementById('clock').innerHTML = d1;
-    refreshClock()
+    let d2 = `${d.getFullYear()} - ${d.getMonth() + 1} - ${d.getDate()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
+    
+    document.getElementById('clock').innerHTML = d2;
+    setTimeout(displayClock, 1000);
+
+    // refreshClock()
 }
 
 function refreshClock() {
