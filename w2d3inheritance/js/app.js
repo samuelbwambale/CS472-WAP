@@ -1,7 +1,18 @@
+/* 
+    app.js
+    @author sbwambale
+ */
+
+ "use strict"
+
 /* QUESTION 1 */
+
+// object literal
 let person = {
     name: '',
     dateOfBirth: '',
+
+    // getters and setters to enforce encapsulation
     getName: function () {
         return this.name
     },
@@ -15,39 +26,32 @@ let person = {
         this.dateOfBirth = dateOfBirth;
     }
 };
+// inheritance using Object.create()
+let john = Object.create(person);
+john.setName('John');
+john.setDateOfBirth(new Date('1998, 12, 10')); // 11 for December
+john.setDateOfBirth(new Date('December 10, 1998')); // 11 for December
+console.log('The person’s name is ' + john.getName());
+console.log(john.getName() + ' was born on ' + john.getDateOfBirth());
 
-let p1 = Object.create(person);
-p1.setName('John');
-p1.setDateOfBirth('1998-12-10');
-console.log('The person’s name is ' + p1.getName());
-console.log(p1.getName() + ' was born on ' + p1.getDateOfBirth() );
 
 /* QUESTION 2 */
-let person1 = Object.create(person);
-let employee = {
-    salary: 0.0,
-    hireDate: new Date(),
-    jobTitle: '',
-    getSalary: function () {
-        return this.salary;
-    },
-    setSalary: function (newSalary) {
-        this.salary = newSalary;
-    },
-    getJobTtile: function () {
-        return this.jobTitle;
-    },
-    doJob: function(title) {
-        return `${person1.getName()} is a ${title} who earns $${this.salary}`
-    }
+// Employee extends Person
+let employee = Object.create(person);
+employee.salary = 0.0;
+employee.hireDay = new Date();
+employee.doJob = function(jobTitle) {
+    console.log(`${this.getName()} is a ${jobTitle} who earns $${this.salary}`)
 }
-employee.setSalary(249995.50);
-person1.setName('Anna');
-const doJob = employee.doJob('Programmer');
-console.log(doJob);
+// instance of employee
+const anna = Object.create(employee);
+anna.setName('Anna');
+anna.salary = 249995.50;
+anna.doJob('Programmer');
+
 
 /* QUESTION 3 */
-
+// Person object with constructor function
 class Person{
     constructor(name, dateOfBirth) {
         this.name = name;
@@ -58,8 +62,13 @@ class Person{
     }
 }
 
-let p2 = new Person('Peter', '1985-11-10')
-console.log(p2.toString());
+let peter = new Person('Peter', new Date('1985-11-10'))
+
+// add new property toString()
+Person.prototype.toString = function() {
+    return `{Name: ${this.name}, DateOfBirth: ${this.dateOfBirth}}`
+}
+console.log(peter.toString());
 
 
 

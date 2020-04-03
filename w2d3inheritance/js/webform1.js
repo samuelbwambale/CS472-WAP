@@ -1,6 +1,6 @@
 "use strict"
 
-$(function () {
+$(document).ready(function () {
     // do stuff with the DOM
 
     /* Listen for submit on entire form */
@@ -8,17 +8,17 @@ $(function () {
         "submit",
         function (event) {
             event.preventDefault();
-            console.log("Email: " + document.getElementById('exampleInputEmail1').value);
-            console.log("Password: " + document.getElementById('exampleInputPassword1').value);
-            console.log("Website: " + document.getElementById('exampleInputWebsite').value);
+            console.log("Email: " + $('#exampleInputEmail1').val());
+            console.log("Password: " + $('#exampleInputPassword1').val());
+            console.log("Website: " + $('#exampleInputWebsite').val());
         });
 
     /* Alternatively, listen for click on submit button */
     /* $("#login-form-submit").click(function () {
         event.preventDefault();
-        console.log("Email: " + document.getElementById('exampleInputEmail1').value);
-        console.log("Password: " + document.getElementById('exampleInputPassword1').value);
-        console.log("Website: " + document.getElementById('exampleInputWebsite').value);
+        console.log("Email: " + $('#exampleInputEmail1').val());
+        console.log("Password: " + $('#exampleInputPassword1').val());
+        console.log("Website: " + $('#exampleInputWebsite').val());
     }); */
 });
 

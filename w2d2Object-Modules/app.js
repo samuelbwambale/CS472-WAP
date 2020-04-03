@@ -106,7 +106,7 @@ const Employee = (function () {
         }
     }
 })();
-
+// or can reuse it by using emp1 = Employee; emp.setName()
 Employee.setName('Samuel');
 Employee.setAge(30);
 Employee.setSalary(100000);

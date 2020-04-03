@@ -15,7 +15,7 @@ $(function () {
             let price = document.getElementById('price').value;
             let date = document.getElementById('date').value;
 
-           /*  let arr = {
+            const obj = {
                 "ProductNumber": productNumber,
                 "QuantityInStock": quantityInStock,
                 "ProductName": productName,
@@ -23,19 +23,39 @@ $(function () {
                 "Price": price,
                 "Date": date
             };
-            for (const field in arr) {
-                console.log(field +": " + arr[field]);
-            } */
+            for (const key in obj) {
+                const txt = $("<p>").text(key + ": " + obj[key]);
+                $("#divProductData").append(txt);
+                console.log(key +": " + obj[key]);
+
+            }
+            $('#divProductData').css('display', 'block');
             
-           
-            let txt1 = $("<p>").html(productNumber);
-            let txt2 = $("<p>").html(quantityInStock);
-            let txt3 = $("<p>").html(productName);
-            let txt4 = $("<p>").html(supplier);
-            let txt5 = $("<p>").html(price);
-            let txt6 = $("<p>").html(date);
-            console.log("txt6 content " + txt6.html())
-            $("container").append(txt1, txt2, txt3, txt4, txt5, txt6);
         });
 
 });
+
+// $(document).ready(function() {
+//     $("#productForm").submit(
+//         function (event) {
+//             event.preventDefault();
+//             const productNumber = $('#productNumber').val();
+//             const productName = $('#productName').val();
+//             const price = $('#price').val();
+//             const quantityInStock = $('#quantityInStock').val();
+//             const supplier = $('#supplier').val();
+//             const date = $('#date').val();
+
+//             const divProductData = $('#divProductData');
+
+//             console.log("productName " + productName);
+//             $('#pProductNumber').text("Product Number: " + productNumber);
+//             $('#pProductName').text("Product Name: " + productName);
+//             $('#pUnitPrice').text("Unit Price: " + price);
+//             $('#pQuantityInStock').text("Quantity: " + quantityInStock);
+//             $('#pSupplier').text("Supplier: " + supplier);
+//             $('#pDate').text("Date: " + date);
+
+//             divProductData.css('display', 'block');
+//         })
+// })
