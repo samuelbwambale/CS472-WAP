@@ -1,20 +1,28 @@
 
 /* QUESTION 6 */
-const countObject = {
-    counter: 0,
-    add: function () {
-        this.counter += 1;
-    },
-    reset: function () {
-        this.counter = 0;
+const countObject = (function(){
+    var counter = 0;
+    function add() {
+        counter += 1;
+    }
+    function reset() {
+        counter = 0;
+    }
+    return {
+
+        add: add,
+        reset: reset,
+        counter: function() {
+            return counter;
+        }
     }
 
-};
+})();
 console.log('Using object approach');
 countObject.add();
-console.log("count " + countObject.counter);
+console.log("count " + countObject.counter());
 countObject.reset();
-console.log("count " + countObject.counter);
+console.log("count " + countObject.counter());
 
 
 /* QUESTION 7 */
@@ -27,36 +35,27 @@ A free variable is a variable referred to by a function that is not one of its p
 /* QUESTION 8 */
 const make_adder = function (val) {
     let counter = 0;
-    function add() {
+    return function () {
         counter += val;
+        console.log(counter)
     }
-    function reset() {
-        counter = 0;
-    }
-    return {
-        add: add,
-        counter: function () {
-            return counter;
-        }
-    }
+    
 };
 
 console.log('Make adder');
 const add5 = make_adder(5);
-add5.add(); add5.add(); add5.add();
-console.log(add5.counter());
-
+add5(); add5(); add5();
 const add7 = make_adder(7);
-add7.add(); add7.add(); add7.add();
-console.log(add7.counter());
+add7(); add7(); add7();
+
 
 
 
 /* QUESTION 9 */
 
 /*
-Using the module pattern can remove names from the global namespace. 
-Modules help to to avoid declaring global variables/functions
+Using the module pattern (IIFE) can remove names from the global namespace. 
+Modules help to to avoid declaring global variables/functions. Modules enable us do some encapsulation.
 */
 
 /* QUESTION 10
@@ -65,8 +64,11 @@ Modules help to to avoid declaring global variables/functions
 const Employee = (function () {
     let name = "";
     let age = 0;
-    let salary = 0;
-    const getName = function () {
+    let salary = 0.0;
+    /* function getName() { // using function declaration
+        return name;
+    }; */
+    const getName = function () { // using function expression
         return name;
     };
     const getAge = function () {
@@ -98,18 +100,22 @@ const Employee = (function () {
         setAge: setAge,
         setSalary: setSalary,
         increaseSalary: increaseSalary,
-        incrementAge: incrementAge
+        incrementAge: incrementAge,
+        getInfo: function() {
+            return `Name: ${name}, Age: ${name}, Salary: ${salary}`
+        }
     }
 })();
 
-console.log('Employee object');
 Employee.setName('Samuel');
 Employee.setAge(30);
-Employee.setSalary(100000)
-
+Employee.setSalary(100000);
+console.log('Employee info: ' + Employee.getInfo());
+Employee.increaseSalary(100);
+console.log('Employee info: ' + Employee.getInfo());
 
 /* Question 11 */
-Employee.address = "";
+Employee.address = ""; // Using a constructor, Employee.prototype.address = ""
 Employee.getAddress = function () {
   return Employee.address;
 };

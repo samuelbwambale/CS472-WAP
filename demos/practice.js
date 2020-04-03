@@ -106,10 +106,10 @@ Instead let and const variables are marked as uninitialized
 
 y; // undeclaired variable not hoisted
 var y; // declared variable so it is hoisted
- /* QN: Do global variables get hoisted? e.g x =1;
+/* QN: Do global variables get hoisted? e.g x =1;
 AN: Yes, but they do not get initialized with the value of undefined
 Instead let and const variables are marked as uninitialized
- */
+*/
 
 
 /* 
@@ -303,14 +303,14 @@ add7.add(); add7.add(); add7.add();
 console.log(add7.counter());
 
 
-str = "asdf";
+/* str = "asdf";
 foo = 1;
 var bar = function () {
     alert(foo); 
     alert(str);
 };
 bar();
-
+ */
 /* 1, in global str=undefined, foo=undefined; bar = undediened.
 2, execution in global, str="asdf", foo=1; call bar()
 3, in bar env, alert(foo) displays 1, alert(str) diplays asdf;
@@ -380,12 +380,51 @@ Employee
 Employee.address = "";
 // another method! (Q: public or private? public)
 Employee.getAddress = function () {
-  return Employee.address;
+    return Employee.address;
 };
 Employee.setAddress = function (newAddress) {
-  Employee.address = newAddress;
+    Employee.address = newAddress;
 };
 
 Employee.setAddress("Fairfield");
 console.log("Name: " + Employee.fetchName() + " Age: " + Employee.getAge() + " Address: " + Employee.getAddress());
 
+
+
+/* class User {
+    constructor(name) {
+        this.name = name; // calls the setter
+    }
+    get name() {
+        console.log("this._name " + this._name)
+        return this._name; //property must match the name used in the setter
+    }
+    set name(value) {
+        if (value.length < 4) {
+            console.log(value + "Name is too short.");
+            return;
+        }
+        this._name = value; //must set a property name different from the setter name
+    }
+}
+let user = new User("John");
+alert(user.name); // calling the getter
+user.name = 'Fred'; // calling the setter 
+user2 = new User(""); // Name too short. */
+
+class User {
+    constructor(name = "Anonymous") {
+        this.name = name;
+    }
+    sayHi() {
+        console.log(`Hello, ${this.name}!`);
+    }
+}
+fred = new User();
+console.log(fred);
+console.log(fred.__proto__);
+console.log(User.prototype);
+fred.sayHi();
+bob = new User("Bob");
+console.log(bob);
+bob.sayHi();

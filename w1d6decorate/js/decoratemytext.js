@@ -8,6 +8,10 @@ function increaseFontSizeWithTimer() {
     setInterval(increaseFontSize, 500);
 }
 
+function clearFontGrowth() {
+    clearInterval(increaseFontSizeWithTimer);
+}
+
 function displayAlert() {
     alert("Hello, world!");
 }

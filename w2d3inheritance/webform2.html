@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script defer src="./js/webform2.js"></script>
+
+    <title>Web Form 2</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">MUM Golden Dome Market ::: SRM System</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Suppliers</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Hello!</a></li>
+                    <button type="button" class="btn btn-default navbar-btn">Sign Out</button>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+    <div id="container" class="container">
+
+        <h3>New Product Form</h3>
+        <form id="productForm">
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="productNumber">Product Number</label>
+                <input type="text" class="form-control" id="productNumber" name="productNumber"
+                    placeholder="Product number" required>
+            </div>
+            <div class="col-md-6 form-group">
+                <label for="quantityInStock">Quantity in stock</label>
+                <input type="number" class="form-control" id="quantityInStock" name="quantityInStock" placeholder="0"
+                    required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="productName">Name</label>
+                <input type="text" class="form-control" id="productName" name="productName" placeholder="Product name"
+                    required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="supplier">Supplier</label>
+                <select class="form-control" id="supplier">
+                    <option>Select a supplier</option>
+                    <option>Microsoft</option>
+                    <option>IBM</option>
+                    <option>Amazon</option>
+                    <option>Apple</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="price">Unit Price</label>
+                <input type="number" class="form-control" id="price" placeholder="0.0">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="date">Date Supplied</label>
+                <input type="date" class="form-control" id="date" placeholder="yyyy-mm-dd">
+                <small id="small-text" class="form-text text-muted">Enter a Valid Date</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="reset" id="reset" name="button" class='btn btn-warning'
+                            onclick="reset();">Reset</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" id="cancel" name="button" class="btn btn-danger">Cancel</button>
+                        <!-- <button type="button" class="btn btn-outline-warning">Warning</button> -->
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" id="product-form-submit" name="button" class='btn' style="background-color: #e3f2fd;"
+                            >Add Product</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </form>
+        <div id= "parent">This is parent</div> 
+
+    </div>
+    <footer id="footer">
+        <a href="http://validator.w3.org/check?uri=https://samuelbwambale.github.io/CS472-WAP/w1d4forms/webform2.html">
+            <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html-validator" />
+        </a>
+
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="css-validate" />
+        </a>
+        <div>Copyright &copy; 2020 - sbwambale</div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
