@@ -106,7 +106,6 @@ const Employee = (function () {
         }
     }
 })();
-// or can reuse it by using emp1 = Employee; emp.setName()
 Employee.setName('Samuel');
 Employee.setAge(30);
 Employee.setSalary(100000);
@@ -115,7 +114,7 @@ Employee.increaseSalary(100);
 console.log('Employee info: ' + Employee.getInfo());
 
 /* Question 11 */
-Employee.address = ""; // Using a constructor, Employee.prototype.address = ""
+Employee.address = ""; // If using a constructor, add new property by Employee.prototype.address = ""
 Employee.getAddress = function () {
   return Employee.address;
 };

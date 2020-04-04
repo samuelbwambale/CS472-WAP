@@ -374,7 +374,15 @@ Employee.setName('Samuel');
 Employee.setAge(30);
 Employee.setSalary(100000)
 console.log("Name: " + Employee.fetchName() + " Age: " + Employee.getAge());
-Employee
+
+empA = Employee;
+empA.setName('empA');
+console.log("empA name " + empA.fetchName())
+
+empB = Employee;
+empB.setName('empB');
+console.log("empB name " + empB.fetchName())
+console.log("checking empA name again " + empA.fetchName()) // prints empB
 
 /* Question 11 */
 Employee.address = "";
