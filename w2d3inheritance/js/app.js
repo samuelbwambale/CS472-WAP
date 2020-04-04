@@ -7,7 +7,7 @@
 
 /* QUESTION 1 */
 
-// object literal
+// Person object with object literals
 let person = {
     name: '',
     dateOfBirth: '',
@@ -36,7 +36,7 @@ console.log(john.getName() + ' was born on ' + john.getDateOfBirth());
 
 
 /* QUESTION 2 */
-// Employee extends Person
+// Employee inherits Person and adds more properties salary, hireDay and doJob()
 let employee = Object.create(person);
 employee.salary = 0.0;
 employee.hireDay = new Date();
@@ -56,9 +56,6 @@ class Person{
     constructor(name, dateOfBirth) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
-    }
-    toString() {
-        return `{Name: ${this.name}, DateOfBirth: ${this.dateOfBirth}}`
     }
 }
 
