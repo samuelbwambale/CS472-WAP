@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Practice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./demo.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"
+        integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script>
+
+    <script defer src="./examPractice.js"></script>
+</head>
+
+<body id="body">
+    <!--Navbar-->
+    <nav class="navbar navbar-light" style="background-color: #428bca;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">CS472 ::: Mini Banking App</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Suppliers</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Hello!</a></li>
+                    <button type="button" class="btn btn-default navbar-btn">Sign Out</button>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <!--/.Navbar-->
+
+    <!-- Container -->
+    <div id="container" class="container">
+        <h3>Bank Account Form</h3>
+        <form id="bankAccountForm" method="POST">
+            <div class="form-group">
+                <label for="accountNumber">Account No</label>
+                <input type="text" class="form-control" id="accountNumber" name="accountNumber"
+                    aria-describedby="accountNumberHelp" placeholder="01-XXX-XXXX" required>
+                <small id="accountNumberHelp" class="form-text text-muted">Your unique account number.</small>
+            </div>
+            <div class="form-group">
+                <label for="customerName">Customer Name</label>
+                <input type="text" class="form-control" id="customerName" name="customerName"
+                    placeholder="e.g John B. Smith" required>
+            </div>
+            <div class="form-group">
+                <label for="typeOfAccount">Type of Account</label>
+                <select class="form-control" id="typeOfAccount" name="typeOfAccount">
+                    <option>Checking</option>
+                    <option>Saving</option>
+                    <option>Retirement</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" id="account-form-submit" name="button" class='btn btn-primary'
+                    style="background-color: #428bca;">Create New Account</button>
+            </div>
+        </form>
+
+        <div id="customerAccountHeader">
+            <p style="padding: 10px;">List of Customer Accounts</p>
+        </div>
+        <div id="listOfAccounts" style="display: none;">
+
+        </div>
+
+
+    </div>
+    <!-- /.Container -->
+
+    <footer id="footer">
+        <a href="http://validator.w3.org/check?uri=https://samuelbwambale.github.io/CS472-WAP/demos/examPractice.html">
+            <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html-validator" />
+        </a>
+
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="css-validate" />
+        </a>
+        <div>Copyright &copy; 2020 - sbwambale</div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -12,7 +12,9 @@ label {
 
 footer {
     float: right;
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    right: 0;
+    right: 0; */
+    margin-top: 20px;
+    font-family: monospace;
 }
