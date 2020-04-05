@@ -14,3 +14,11 @@ function refreshClock() {
     let refresh = 1000; //milliseconds
     mytime = setTimeout('displayClock()', refresh)
 }
+
+
+/*
+
+setTimeout(function, delayMS); // arranges to call given function after given delay in ms
+setInterval(function, delayMS); // arranges to call function repeatedly every delayMS ms
+
+*/

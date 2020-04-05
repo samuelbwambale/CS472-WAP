@@ -16,7 +16,7 @@ $(document).ready(function () {
             const typeOfAccount = $('#typeOfAccount').val();
 
 
-            console.log("customerName " + customerName);
+            // console.log("customerName " + customerName);
             const newAccount = $("<div>").css({"border": "0.5px solid", "padding": "1em"});
             newAccount.text(accountNumber + " | " + customerName + " | " + typeOfAccount);
             listOfAccounts.append(newAccount);

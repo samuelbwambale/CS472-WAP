@@ -12,6 +12,14 @@ function clearFontGrowth() {
     clearInterval(increaseFontSizeWithTimer);
 }
 
+/*
+
+setTimeout(function, delayMS); // arranges to call given function after given delay in ms
+setInterval(function, delayMS); // arranges to call function repeatedly every delayMS ms
+
+*/
+
+
 function displayAlert() {
     alert("Hello, world!");
 }
