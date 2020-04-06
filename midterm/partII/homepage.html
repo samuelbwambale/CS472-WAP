@@ -29,11 +29,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li ><a class="text-color" href="#">Home</a></li>
-                    <li><a class="text-color" href="#">Census Form</a></li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-color" href="#">|<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a href="./homepage.html" class="text-color">Home</a></li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-color" href="#">|<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li><a href="./censusForm.html" class="text-color">Census Form</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="clock" style="position: relative;"></li>
+                    <li><a id="clock" class="text-color" href="#"></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -81,14 +87,24 @@
     </div>
     <footer>
         <nav class="navbar navbar-light " style="background-color: rgb(55, 81, 129);">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav nav">
                 <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="#">O. Kalu :: CS472-WAP<span class="sr-only"></span></a>
+                    <a class="nav-link text-color"href="#">S. Bwambale :: CS472-WAP<span class="sr-only"></span></a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item active">
-                    <a class="nav-link" style="color: white;"  href="#" id="month"> &copy; April 2020</a>
+                    <a class="nav-link text-color" href="http://validator.w3.org/check?uri=https://samuelbwambale.github.io/CS472-WAP/midterm/partII/homepage.html">
+                        <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html-validator" />
+                      </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-color" href="https://jigsaw.w3.org/css-validator/check/referer">
+                        <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="css-validate" />
+                      </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-color"  href="#" id="month"> &copy; April 2020</a>
                 </li>
             </ul>
         </nav>
