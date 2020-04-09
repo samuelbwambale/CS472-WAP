@@ -8,33 +8,36 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HelloServlet", urlPatterns = {"/index.html"})
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "DisplayServlet", urlPatterns = {"/display"})
+public class DisplayServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
+    int counter;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HelloServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        this.counter = 0;
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        this.counter++;
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 
-        String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
-
-//        System.out.println("request" + request);
         try(PrintWriter printWriter = response.getWriter()) {
-            String helloMessage = "<html lang=\"en\">\n" +
+            String customerName = request.getParameter("customerName");
+            String gender = request.getParameter("gender");
+            String category = request.getParameter("category");
+            String message = request.getParameter("message");
+            Integer overallCounter = (Integer) request.getAttribute("counter");
+            String baseUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+
+            String displayDetails = "<html lang=\"en\">\n" +
                     "\n" +
                     "<head>\n" +
                     "    <meta charset=\"UTF-8\">\n" +
@@ -78,22 +81,31 @@ public class HelloServlet extends HttpServlet {
                     "\n" +
                     "\n" +
                     "    <div class=\"container\">\n" +
-                    "    <div class=\"jumbotron card-background\">\n" +
+                    "        <div class=\"jumbotron\">\n" +
                     "\n" +
-                    "        <h1>Hello, world of HttpServlet 4.0</h1>\n" +
-                    "        <h3>Welcome to Lab 11</h3>\n" +
-                    "        <p>This is a simple hero unit, a simple jumbotron style component for calling extra attention to featured content or information </p>\n" +
-                    "\n" +
-                    "        <hr>\n" +
-                    "\n" +
-                    "        <p>It uses utility classes for typography and spacing to space content out within larger container</p>\n" +
-                    "  <a class=\"btn btn-primary navbar-btn\" href=\"" + baseUrl + "/contact-us\" role=\"button\">Learn more</a>\n" +
-                    "        \n" +
-                    "\n" +
+                    "            <h2 class=\"card-header\">\n" +
+                    "                Thank you! Your message has been recieved as follows\n" +
+                    "            </h2>\n" +
+                    "            <div class=\"card-body\">\n" +
+                    "                <p class=\"card-title\">Name: " + customerName + "</p>\n" +
+                    "                <p class=\"card-text text-muted\">Gender: " + gender + "</p>\n" +
+                    "                <p class=\"card-text text-muted\">Category: " + category + "</p>\n" +
+                    "                <p class=\"card-text text-muted\">Message: " + message + "</p>\n" +
+                    "            </div>\n" +
+                    "        <a href=\"" + request.getContextPath() + "/contact-us\">Contact Us</a> \n" +
+                    "       </div>\n" +
+                    "  <div style=\"margin-top: 20px;\">\n" +
+                    "            <p class=\"text-muted float-left\">\n" +
+                    "                Hit Count for this page: " + (this.counter == 0 ? "--" : this.counter) + "\n" +
+                    "            </p>\n" +
+                    "            <p class=\"text-muted float-right\">\n" +
+                    "                Total Hit count for the entire WebApp: " + (overallCounter == null || overallCounter == 0 ? "--" : overallCounter) + "\n" +
+                    "            </p>\n" +
+                    "        </div>" +
                     "    </div>\n" +
-                    "</div>\n" +
+                    "    </div>\n" +
                     " <footer style=\"float: right; position: fixed; bottom: 0; right: 0; margin-top: 20px; font-family: monospace;\">" +
-                    "        \n" +
+                    "\n" +
                     "        <div>Copyright &copy; 2020</div>\n" +
                     "    </footer>\n" +
                     "\n" +
@@ -109,9 +121,8 @@ public class HelloServlet extends HttpServlet {
                     "</body>\n" +
                     "\n" +
                     "</html>";
-            printWriter.print(helloMessage);
 
+            printWriter.println(displayDetails);
         }
-
     }
 }
