@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet(name = "ContactMessageController", urlPatterns = {"/contact-messages"})
+@WebServlet(name = "ContactMessageController", urlPatterns = {"/contact-message"})
 public class ContactMessageController extends HttpServlet {
 
     int counter;
@@ -54,20 +54,14 @@ public class ContactMessageController extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/views/contact-form.jsp").forward(request, response);
 
         } else {
-            request.setAttribute("customerName", customerName);
-            request.setAttribute("gender", gender);
-            request.setAttribute("category", category);
-            request.setAttribute("message", message);
-
-
-            request.getRequestDispatcher("/WEB-INF/views/thank-you.jsp").forward(request, response);
+            request.getRequestDispatcher("/thank-you").forward(request, response);
         }
 
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/contact-form.jsp").forward(request, response);
     }
 }
 
