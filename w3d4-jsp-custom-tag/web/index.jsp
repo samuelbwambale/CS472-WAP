@@ -8,7 +8,7 @@
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix='ct' uri='/WEB-INF/custom.tld'%>
+<%@ taglib prefix='ct' uri='/WEB-INF/my-custome-tlds/currDateTime.tld'%>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -37,17 +37,18 @@
         </div>
         <div class="card-body">
           <p class="card-title"><span class="font-weight-bold">Name:</span> currentDateTime</p>
-          <p class="card-title"><span class="font-weight-bold">URI:</span> /WEB-INF/custom.tld</p>
+          <p class="card-title"><span class="font-weight-bold">URI:</span> /WEB-INF/my-custome-tlds/currDateTime.tld</p>
           <p class="card-subtitle mb-2"><span class="font-weight-bold">Description:</span>
             This custom tag accepts two attributes <span class="font-italic">(color and size)</span> and prints the current date and time using the given attributes. The attributes are optional. A custom tag is a user-defined JSP language element. When a JSP page containing a custom tag is translated into a servlet, the tag is converted to operations on an object called a tag handler.
             The Web container then invokes those operations when the JSP page's servlet is executed.<br><br>
             <span class="font-weight-bold">Example: </span> Am using the custom tag to print the <span class="font-italic">now()</span> date in different colors and sizes.
             <div class="container margin-top-2">
-            <p><ct:currentDateTime color="red" size="14px"/></p>
-            <p><ct:currentDateTime color="yellow" size="1em"/></p>
+            <p>Using <span class="font-italic">&ltct:currentDateTime color="red" size="14px"&gt</span> now date and time is displayed as: <ct:currentDateTime color="red" size="14px"/></p>
+            <p>Using <span class="font-italic">&ltct:currentDateTime color="green" size="2rem"&gt</span> now date and time is displayed as: <ct:currentDateTime color="green" size="2em"/></p>
+      <p>Using <span class="font-italic">&ltct:currentDateTime&gt</span> without any attributes, now date and time is displayed as: <ct:currentDateTime/></p>
           </div>
 
-    <p>For more details <a href="https://github.com/samuelbwambale/CS472-WAP/blob/master/w3d4-jsp-custom-tag/web/WEB-INF/custom.tld" class="card-link">check here</a> to see the implementation</p>
+    <p>For more details <a href="https://github.com/samuelbwambale/CS472-WAP/blob/master/w3d4-jsp-custom-tag/web/WEB-INF/custom.tld" class="card-link">check here</a> to see more details of the implementation</p>
   </div>
 </div>
 </p>

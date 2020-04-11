@@ -2,7 +2,7 @@
     <tlib-version>1.0</tlib-version>
     <jsp-version>2.0</jsp-version>
     <short-name>Current Date Time</short-name>
-    <uri>/WEB-INF/custom.tld</uri>
+    <uri>/WEB-INF/my-custome-tlds/currDateTime.tld</uri>
     <tag>
         <description>Accepts two attributes (color and size) that prints the current date and time</description>
         <name>currentDateTime</name>
