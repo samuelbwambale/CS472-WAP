@@ -48,7 +48,7 @@
             <p><ct:currentDateTime color="yellow" size="1em"/></p>
           </div>
 
-    <p>For more details <a href="http://www.google.com" class="card-link">check here</a> to see the implementation</p>
+    <p>For more details <a href="https://github.com/samuelbwambale/CS472-WAP/tree/master/w3d4-jsp-custom-tag" class="card-link">check here</a> to see the implementation</p>
   </div>
 </div>
 </p>

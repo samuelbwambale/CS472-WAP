@@ -10,8 +10,8 @@ import java.time.format.DateTimeFormatter;
 
 public class CurrentDateTime extends SimpleTagSupport {
 
-    String color;
-    String size;
+    private String color;
+    private String size;
 
     public void doTag() throws JspException, IOException {
         String currDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy"));
