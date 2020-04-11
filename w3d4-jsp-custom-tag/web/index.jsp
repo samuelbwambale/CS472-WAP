@@ -8,7 +8,6 @@
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix='ct' uri='/WEB-INF/custom.tld'%>
 <html>
 <head>
@@ -48,7 +47,7 @@
             <p><ct:currentDateTime color="yellow" size="1em"/></p>
           </div>
 
-    <p>For more details <a href="https://github.com/samuelbwambale/CS472-WAP/tree/master/w3d4-jsp-custom-tag" class="card-link">check here</a> to see the implementation</p>
+    <p>For more details <a href="https://github.com/samuelbwambale/CS472-WAP/blob/master/w3d4-jsp-custom-tag/web/WEB-INF/custom.tld" class="card-link">check here</a> to see the implementation</p>
   </div>
 </div>
 </p>
