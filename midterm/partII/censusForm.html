@@ -33,17 +33,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link text-color" href="#">|<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a href="./homepage.html" class="text-color">Home</a></li>
-                    <li class="nav-item active">
-                        <a class="nav-link text-color" href="#">|<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a href="./censusForm.html" class="text-color">Census Form</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="./homepage.html" class="text-color">Home</a></li>
+                    <li class="nav-item"><a  class="nav-link" href="./censusForm.html" class="text-color">Census Form</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="clock" class="text-color" href="#"></a></li>
+                    <li class="nav-item"><a class="nav-link" id="clock" href="#"></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -141,29 +136,24 @@
             </form>
         </div>
     </section>
-    <footer>
-        <nav class="navbar navbar-light " style="background-color: rgb(55, 81, 129);">
-            <ul class=" nav navbar-nav ">
-                <li class="nav-item active">
-                    <a class="nav-link text-color" href="#">S. Bwambale :: CS472-WAP<span class="sr-only"></span></a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item active">
+
+    <footer class="footer">
+        <div id="footer-content">
+            <span class="text-muted">Sbwambale : : : CS472-WAP</span>
+            <div style="float: right;">
+                <span>
                     <a class="nav-link text-color" href="http://validator.w3.org/check?uri=https://samuelbwambale.github.io/CS472-WAP/midterm/partII/censusForm.html">
                         <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png" alt="html-validator" />
                       </a>
-                </li>
-                <li class="nav-item active">
+                </span>
+                <span>
                     <a class="nav-link text-color" href="https://jigsaw.w3.org/css-validator/check/referer">
                         <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="css-validate" />
                       </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link text-color" href="#" id="month"> &copy; April 2020</a>
-                </li>
-            </ul>
-        </nav>
+                    </span>
+                <span class="text-muted">&copy; April 2020</span>
+            </div>
+        </div>
     </footer>
 </body>
 
