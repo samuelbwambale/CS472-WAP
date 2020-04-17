@@ -37,7 +37,7 @@
                 <p class="card-subtitle mb-2 text-muted">Gender: <c:out value="${contactMessage.gender}"></c:out></p><br/>
                 <p class="card-subtitle mb-2 text-muted">Category: <c:out value="${contactMessage.category}"></c:out></p><br/>
                 <p class="card-subtitle mb-2">Message: <c:out value="${contactMessage.message}"></c:out></p><br/><br/>
-                <p>Please feel free to <a href="./contact-form" class="card-link">Contact Us</a> again</p>
+                <p>Please feel free to <a href="./contact-message" class="card-link">Contact Us</a> again</p>
         </div>
         </div>
     </p>
