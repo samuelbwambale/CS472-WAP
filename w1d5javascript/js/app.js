@@ -226,3 +226,75 @@ console.log("printFibo(2, 0, 1) "); printFibo(2, 0, 1);
 console.log("printFibo(3, 0, 1) "); printFibo(3, 0, 1);
 console.log("printFibo(6, 0, 1) "); printFibo(6, 0, 1);
 console.log("printFibo(10, 0, 1) "); printFibo(10, 0, 1);
+
+/*
+Create a function using function declaration named sum with one parameter of Array type, the
+returned result is the sum of all elements which are greater than 20.
+*/
+function sumGreaterThan20(array) {
+    let sum = 0;
+    for (let index = 0; index < array.length; index++) {
+        if(array[index] > 20)
+            sum += array[index];
+    }
+    return sum;
+}
+
+const arrayOfInts = [1, 23, 31, 4, 20];
+console.log("sumGreaterThan20([1, 23, 31, 4, 20]) returns " + sumGreaterThan20(arrayOfInts));
+
+/*
+Create a function using function expression named getNewArray with one parameter of String
+Array, return a new array which contains all string, length is greater than and equal to 5, and
+contains letter ‘a’.
+*/
+
+function getNewArray(array) {
+    const newArray = [];
+
+    for (let index = 0; index < array.length; index++) {
+            if(array[index].length >= 5 && array[index].includes('a'))
+                newArray.push(array[index]);
+        }
+
+    return newArray;
+
+}
+
+const arrayOfWords = ["Banana", "Orange", "Apple", "Mango", "Pie", "Berry"];
+console.log("getNewArray(Banana, Orange, Apple, Mango, Pie, Berry) returns " + getNewArray(arrayOfWords));
+
+/*
+Write a JS function called shortest that takes 3 strings and returns the shortest string(the shortest is referring to the length of the string).
+For example:
+shortest("hello", "z", "bye")  // should return "z"
+*/
+
+function shortest(a,b,c) {
+    let stringArray = [];
+    stringArray.push(a);
+    stringArray.push(b);
+    stringArray.push(c);
+
+    let strings = stringArray.filter( x => typeof x === "string" )
+        .sort((a, b) => a.length - b.length);
+    return strings[0];
+}
+
+console.log("shortest(hello, z, bye) returns " + shortest("hello", "z", "bye"));
+
+/*
+For the given students array below, compute the average grade of the students who took cs303 course.
+You're not allowed to use for, while, do...while, for..of, forEach loop
+*/
+const students = [
+  { name: 'Quincy', grade: 96, courses:['cs301', 'cs303']},
+  { name: 'Jason', grade: 84, courses:['cs201', 'cs203']},
+  { name: 'Alexis', grade: 100, courses:['cs105', 'cs211'] },
+  { name: 'Sam', grade: 65, courses:['cs445', 'cs303'] },
+  { name: 'Katie', grade: 90, courses:['cs303', 'cs477'] }
+];
+const selectedStudents = students.filter(student => student.courses.includes("cs303"));
+const size = selectedStudents.length
+let avg = selectedStudents.map(student => student.grade).reduce((a, b) => a + b)/size)
+console.log(avg)
